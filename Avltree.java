@@ -12,7 +12,6 @@ public class SimpleAVLTree {
     private int height(Node N) {
         return (N == null) ? 0 : N.height;
     }
-
     // Right rotate
     private Node rightRotate(Node y) {
         Node x = y.left;
@@ -23,7 +22,6 @@ public class SimpleAVLTree {
         x.height = Math.max(height(x.left), height(x.right)) + 1;
         return x;
     }
-
     // Left rotate
     private Node leftRotate(Node x) {
         Node y = x.right;
