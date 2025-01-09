@@ -1,6 +1,5 @@
 import java.util.Scanner;
-
-public class SimpleSelectionSort {
+public class Selectionsort1 {
     public static void selectionSort(int[] array) {
         int n = array.length;
 
@@ -10,41 +9,32 @@ public class SimpleSelectionSort {
                 if (array[j] < array[minIndex]) {
                     minIndex = j;
                 }
-            }
-            // Swap the found minimum element with the first element
+            }       
             int temp = array[minIndex];
             array[minIndex] = array[i];
             array[i] = temp;
         }
     }
-
     public static void printArray(int[] array) {
         for (int num : array) {
             System.out.print(num + " ");
         }
         System.out.println();
     }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("Enter the number of elements: ");
         int size = scanner.nextInt();
         int[] array = new int[size];
-
         System.out.println("Enter the elements:");
         for (int i = 0; i < size; i++) {
             array[i] = scanner.nextInt();
         }
-
         System.out.println("Original array:");
         printArray(array);
-
         selectionSort(array);
-
         System.out.println("Sorted array:");
         printArray(array);
-
         scanner.close();
     }
 }
